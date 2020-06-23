@@ -827,3 +827,13 @@ hr.dashed {
 .div1 {
   background-color: gray;
 }
+
+.boxp{
+
+	padding-left: 3px;
+	padding-right: 3px;
+	padding-top:3px;
+	padding-bottom: 3px;
+	box-shadow: 2px 3px;
+	border: 1px solid;
+}
