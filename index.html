@@ -28,6 +28,23 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Counter-Up/1.0.0/jquery.counterup.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/jquery.waypoints.js"></script>
+    <script>
+    	$(document).on("scroll", function() {
+  var pageTop = $(document).scrollTop();
+  var pageBottom = pageTop + $(window).height();
+  var tags = $(".tag");
+
+  for (var i = 0; i < tags.length; i++) {
+    var tag = tags[i];
+
+    if ($(tag).position().top < pageBottom) {
+      $(tag).addClass("visible");
+    } else {
+      $(tag).removeClass("visible");
+    }
+  }
+});
+    </script>
     <!-- <link rel="stylesheet" href="css/responsive.css"> -->
 </head>
 
@@ -162,6 +179,7 @@
 
     <!-- about_area_start -->
    <section class="ftco-section ftco-no-pt ftco-no-pb" style="background-color: #f7f7f7;" data-aos="fade-up">
+   	<div class="tag">
         <div class="container">
             <div class="row d-flex no-gutters">
                 <div class="col-md-6 d-flex">
@@ -175,7 +193,7 @@
                   <div class="col-md-12 heading-section ftco-animate pl-md-4 py-md-4">
                     <span class="subheading"></span>
                     <h2 class="mb-4">About IEEE</h2>
-                    <p><strong>IEEE is the world’s largest technical professional organization dedicated to advancing technology for the benefit of humanity.IEEE and its members inspire a global community to innovate for a better tomorrow through its more than 419,000 members in over 160 countries, and its highly cited publications, conferences, technology standards, and professional and educational activities. IEEE is the trusted “voice” for engineering, computing, and technology information around the globe.</strong></p>
+                    <p><strong>IEEE is the world’s largest technical professional organization dedicated to advancing technology for the benefit of humanity.IEEE and its members inspire a global community to innovate for a better tomorrow and its highly cited publications, conferences, technology standards, and professional and educational activities. IEEE is the trusted “voice” for engineering, computing, and technology information around the globe.</strong></p>
                     <div class="tabulation-2 mt-4">
                                     <ul class="nav nav-pills nav-fill d-md-flex d-block">
                                       <li class="nav-item mb-md-0 mb-2">
@@ -199,10 +217,10 @@
                 </div>
             </div>
         </div>
-        </div>
+        </div></div>
     </section>
     <!-- about_area_end -->
-    <section>
+    <section class="tag">
     <div class="">
     <div class="counting-sec">
       <div class="inner-width">
@@ -244,6 +262,7 @@
 
 
     <!-- dream_service_start -->
+    <section class="tag">
      <div class="dream_service" style="padding-top: 10px;padding-bottom: 10px; background-color: #f7f7f7; ">
         <div class="container">
             <div class="row">
@@ -320,6 +339,7 @@
            </div>
         </div>
     </div>
+</section>
 
     
 
@@ -331,6 +351,7 @@
     <!-- SB CHAPTERS -->
 
    <section class="container" style="padding-top: 20px;">
+   	<div class="tag">
 
     <div class="section-top-border">
                 <div class="section_title text-center mb-20">
@@ -380,7 +401,7 @@
                         </div>
                     </div>
                 </div>
-
+            </div>
             </div>
     </section>
 
@@ -388,6 +409,7 @@
 
 
     <!-- testmonial_area_start -->
+    <section class="tag">
     <div class="testmonial_area testimonial_bg overlay2">
         <div class="container-fluid">
             <div class="row">
@@ -439,11 +461,13 @@
             </div>
         </div>
     </div>
+</section>
     <!-- testmonial_area_end -->
 
     <!-- messege_area_start -- <!-- messege_area_end -->
 
     <!-- footer_start -->
+    <section class="tag">
     <footer class="footer footer_bg">
         <div class="footer_top">
             <div class="container-fluid p-0">
@@ -511,6 +535,7 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
 </p>
         </div>
     </footer>
+</section>
     <!-- footer_end -->
 
 
