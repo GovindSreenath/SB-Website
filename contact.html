@@ -29,6 +29,37 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Counter-Up/1.0.0/jquery.counterup.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/jquery.waypoints.js"></script>
     <!-- <link rel="stylesheet" href="css/responsive.css"> -->
+    <script src="https://smtpjs.com/v3/smtp.js"></script>
+    <script>
+        function emailSender() {
+            const message = document.getElementById("message").value;
+            const name = document.getElementById("name").value;
+            const email = document.getElementById("email").value;
+            const subject = document.getElementById("subject").value;
+            if (message == "" ) {
+                alert("Enter Message");
+            } else if (subject == "") {
+                alert("Enter Subject");
+            } else if (name == "") {
+                alert("Enter Name");
+            } else if (email == "") {
+                alert("Enter Email");
+            } else {
+                Email.send({
+                    SecureToken : "887eb769-718d-433e-91e2-e80b9ad52795",
+                    To : 'mailtoieeesctsb@gmail.com',
+                    From : "mailtoieeesctsb@gmail.com",
+                    Subject : "ieeesctsb.org | Contact Email",
+                    Body : "Name = " + name + " |\n" 
+                         + "Email ID = " + email + " |\n"
+                         + "Subject = " + subject + " |\n"
+                         + "Message = " + message
+                }).then(
+                    message => alert(message)
+                );
+            }
+        }
+    </script>
 </head>
 
 <body>
@@ -133,33 +164,31 @@
                         <h2 class="contact-title">Get in Touch</h2>
                     </div>
                     <div class="col-lg-8">
-                        <form class="form-contact contact_form" action="contact_process.php" method="post" id="contactForm" novalidate="novalidate">
-                            <div class="row">
-                                <div class="col-12">
-                                    <div class="form-group">
-                                        <textarea class="form-control w-100" name="message" id="message" cols="30" rows="9" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter Message'" placeholder=" Enter Message"></textarea>
-                                    </div>
-                                </div>
-                                <div class="col-sm-6">
-                                    <div class="form-group">
-                                        <input class="form-control valid" name="name" id="name" type="text" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter your name'" placeholder="Enter your name">
-                                    </div>
-                                </div>
-                                <div class="col-sm-6">
-                                    <div class="form-group">
-                                        <input class="form-control valid" name="email" id="email" type="email" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter email address'" placeholder="Email">
-                                    </div>
-                                </div>
-                                <div class="col-12">
-                                    <div class="form-group">
-                                        <input class="form-control" name="subject" id="subject" type="text" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter Subject'" placeholder="Enter Subject">
-                                    </div>
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="form-group">
+                                    <textarea class="form-control w-100" name="message" id="message" cols="30" rows="9" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter Message'" placeholder=" Enter Message"></textarea>
                                 </div>
                             </div>
-                            <div class="form-group mt-3">
-                                <button type="submit" class="button button-contactForm boxed-btn">Send</button>
+                            <div class="col-sm-6">
+                                <div class="form-group">
+                                    <input class="form-control valid" name="name" id="name" type="text" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter your name'" placeholder="Enter your name">
+                                </div>
                             </div>
-                        </form>
+                            <div class="col-sm-6">
+                                <div class="form-group">
+                                    <input class="form-control valid" name="email" id="email" type="email" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter email address'" placeholder="Email">
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <div class="form-group">
+                                    <input class="form-control" name="subject" id="subject" type="text" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter Subject'" placeholder="Enter Subject">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group mt-3">
+                            <button onclick="emailSender()" type="submit" class="button button-contactForm boxed-btn">Send</button>
+                        </div>
                     </div>
                     <div class="col-lg-3 offset-lg-1">
                         <div class="media contact-info">
